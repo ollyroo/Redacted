@@ -397,6 +397,7 @@
 				C125138F1A82CB0A00DEB91E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C12513901A82CB0A00DEB91E /* Build configuration list for PBXNativeTarget "RedactedTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +406,7 @@
 				C12513921A82CB0A00DEB91E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
