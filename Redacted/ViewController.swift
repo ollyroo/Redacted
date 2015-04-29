@@ -27,11 +27,9 @@ class ViewController: NSViewController {
         println(Filepath.stringValue)
         let filepath = Filepath.stringValue
         let fileContent = NSString(contentsOfFile: filepath, encoding: NSUTF8StringEncoding, error: nil)
-        println(fileContent)
-        if fileContent != nil {
-            var exists = Searchlines(fileContent!)
-            println(exists)
-        }
+        var file = testifnil(fileContent)
+        println(file)
+        var exists = Searchlines(file)
+        println(exists)
     }
 }
-

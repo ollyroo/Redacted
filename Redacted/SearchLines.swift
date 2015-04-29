@@ -26,6 +26,18 @@ func Searchlines(string: String) -> Bool{
     return exists
 }
 
+func splitlines(lines: String) {
+  //  for i = 0 to ln(lines) {
+        
+//    }
+}
+func testifnil(fileContent: String?) -> String {
+    if fileContent != nil {
+        let file = fileContent!
+        return file
+    }
+    return ("Is nil")
+}
 
 
 
