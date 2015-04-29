@@ -18,7 +18,7 @@ func Searchlines(string: String) -> Bool{
     
     // alternative: not case sensitive
     if string.lowercaseString.rangeOfString("swift") != nil {
-        let exists = true
+        var exists = true
         println("not")
         return exists
     }

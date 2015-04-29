@@ -26,9 +26,12 @@ class ViewController: NSViewController {
     @IBAction func Click(sender: AnyObject) {
         println(Filepath.stringValue)
         let filepath = Filepath.stringValue
-        let searchword = "func"
-        let exists = Searchlines(filepath)
-        println(exists)
+        let fileContent = NSString(contentsOfFile: filepath, encoding: NSUTF8StringEncoding, error: nil)
+        println(fileContent)
+        if fileContent != nil {
+            var exists = Searchlines(fileContent!)
+            println(exists)
+        }
     }
 }
 
