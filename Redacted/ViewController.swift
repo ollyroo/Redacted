@@ -21,9 +21,14 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    @IBOutlet weak var Filepath: NSTextField!
     @IBOutlet weak var Generate: NSButton!
-
-
-
+    @IBAction func Click(sender: AnyObject) {
+        println(Filepath.stringValue)
+        let filepath = Filepath.stringValue
+        let searchword = "func"
+        let exists = Searchlines(filepath)
+        println(exists)
+    }
 }
 

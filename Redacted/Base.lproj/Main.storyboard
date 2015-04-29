@@ -768,7 +768,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ir-pq-skC">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6ir-pq-skC">
                                 <rect key="frame" x="202" y="227" width="76" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="REDACTED" id="AoM-ot-KvH">
                                     <font key="font" metaFont="system"/>
@@ -776,7 +776,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stA-qY-FKG">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="stA-qY-FKG">
                                 <rect key="frame" x="90" y="105" width="300" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dUd-Ce-Bvm">
                                     <font key="font" metaFont="system"/>
@@ -784,24 +784,53 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C12-Jp-MVc">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C12-Jp-MVc">
                                 <rect key="frame" x="209" y="135" width="63" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="usx-Hc-0O3"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="File path" id="PRY-Ox-YM3">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-84-LQA">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-84-LQA">
                                 <rect key="frame" x="161" y="69" width="159" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="H3d-Ly-yIK"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="fC1-BX-1te">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="Click:" target="XfG-lQ-9wD" id="wYK-bE-wQA"/>
+                                </connections>
                             </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAe-ia-xNy">
+                                <rect key="frame" x="90" y="105" width="300" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6ZW-y7-eRj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="stA-qY-FKG" firstAttribute="centerX" secondItem="C12-Jp-MVc" secondAttribute="centerX" id="9Kc-Ss-1JJ"/>
+                            <constraint firstItem="stA-qY-FKG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="90" id="Hw8-5m-nzI"/>
+                            <constraint firstItem="FiT-84-LQA" firstAttribute="centerX" secondItem="stA-qY-FKG" secondAttribute="centerX" id="JnF-EB-ELc"/>
+                            <constraint firstItem="6ir-pq-skC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="26" id="VMq-yz-2aq"/>
+                            <constraint firstItem="FiT-84-LQA" firstAttribute="top" secondItem="stA-qY-FKG" secondAttribute="bottom" constant="8" symbolic="YES" id="fqv-Sr-ERA"/>
+                            <constraint firstItem="stA-qY-FKG" firstAttribute="top" secondItem="C12-Jp-MVc" secondAttribute="bottom" constant="8" symbolic="YES" id="hlK-I0-xL4"/>
+                            <constraint firstItem="C12-Jp-MVc" firstAttribute="top" secondItem="6ir-pq-skC" secondAttribute="bottom" constant="75" id="mS8-Nn-1Lg"/>
+                            <constraint firstItem="FiT-84-LQA" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="oeX-vb-bXN"/>
+                            <constraint firstItem="C12-Jp-MVc" firstAttribute="centerX" secondItem="6ir-pq-skC" secondAttribute="centerX" id="veO-vp-lVl"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="Filepath" destination="CAe-ia-xNy" id="ELi-eU-oN2"/>
                         <outlet property="Generate" destination="FiT-84-LQA" id="N84-Il-Fcq"/>
                         <outlet property="button" destination="FiT-84-LQA" id="GX1-yf-9zy"/>
                     </connections>
