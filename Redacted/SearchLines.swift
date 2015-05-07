@@ -9,14 +9,8 @@
 import Foundation
 
 func Searchlines(string: String) -> Bool{
-    
-    if string.rangeOfString("Swift") != nil {
-        var exists = true
-        println("range")
-        return exists
-    }
-    
     // alternative: not case sensitive
+    
     if string.lowercaseString.rangeOfString("swift") != nil {
         var exists = true
         println("not")
@@ -27,9 +21,20 @@ func Searchlines(string: String) -> Bool{
 }
 
 func splitlines(lines: String) {
-  //  for i = 0 to ln(lines) {
+    var i = 0
+    var characters = [String]()
+    let emptyArray = [String]()
+    var char = String()
+    while i < countElements(lines) {
+        var character = lines[advance(lines.startIndex, i)]
+        char.append(character)
+        println(char)
+        println(i)
+        if char == ()
+        characters.append(char)
+        i = i + 1
         
-//    }
+    }
 }
 func testifnil(fileContent: String?) -> String {
     if fileContent != nil {
@@ -38,24 +43,3 @@ func testifnil(fileContent: String?) -> String {
     }
     return ("Is nil")
 }
-
-
-
-//    let i = 0
-//    func findString() {
-//        let found = false
-//        while i < lookfor.count {
-//            if lookin(i) == lookfor(i) {
-//                found = true
-//            }
-//            while let j = 1 == lookfor.count {
-//                if lookin(i + j - 1) <> lookfor(j) {
-//                    found = false
-//                }
-//            }
-//        }
-//
-//    }
-//
-//
-//}

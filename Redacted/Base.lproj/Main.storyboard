@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87p" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E11f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
@@ -795,7 +795,15 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-84-LQA">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAe-ia-xNy">
+                                <rect key="frame" x="90" y="105" width="300" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6ZW-y7-eRj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button identifier="mainButton" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-84-LQA">
                                 <rect key="frame" x="161" y="69" width="159" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="H3d-Ly-yIK"/>
@@ -808,14 +816,6 @@
                                     <action selector="Click:" target="XfG-lQ-9wD" id="wYK-bE-wQA"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAe-ia-xNy">
-                                <rect key="frame" x="90" y="105" width="300" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6ZW-y7-eRj">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="stA-qY-FKG" firstAttribute="centerX" secondItem="C12-Jp-MVc" secondAttribute="centerX" id="9Kc-Ss-1JJ"/>
@@ -832,12 +832,36 @@
                     <connections>
                         <outlet property="Filepath" destination="CAe-ia-xNy" id="ELi-eU-oN2"/>
                         <outlet property="Generate" destination="FiT-84-LQA" id="N84-Il-Fcq"/>
+                        <outlet property="IsNil" destination="fC1-BX-1te" id="thv-Bx-huK"/>
                         <outlet property="button" destination="FiT-84-LQA" id="GX1-yf-9zy"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="661"/>
+            <point key="canvasLocation" x="81" y="688"/>
+        </scene>
+        <!--pathError-->
+        <scene sceneID="8zh-0n-rqs">
+            <objects>
+                <viewController title="pathError" id="S1T-Xl-eC8" sceneMemberID="viewController">
+                    <view key="view" id="w6a-Su-yaG">
+                        <rect key="frame" x="0.0" y="0.0" width="126" height="26"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zvz-cf-Z33">
+                                <rect key="frame" x="8" y="5" width="120" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enter path" placeholderString="" id="KbH-jq-hkB">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="gAA-Lc-inh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="962"/>
         </scene>
     </scenes>
 </document>
