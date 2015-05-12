@@ -20,31 +20,45 @@ func Searchlines(string: String) -> Bool{
     return exists
 }
 
-func splitlines(lines: String) {
-    var i = 0
-    var linenum = 1
-    var characters = [(Int, String)]()
-    let emptyArray = [String]()
-    var char = String()
-    while i < countElements(lines) {
-        var character = lines[advance(lines.startIndex, i)]
-        char = " "
-        char.append(character)
-        while character != ("\n") {
-            var character = lines[advance(lines.startIndex, i)]
-            char = " "
-            char.append(character)
-            println(character)
-            i = i + 1
-            if character 
-        }
-        characters.append((linenum, char))
-        linenum = linenum + 1
-        println(characters)
-        i = i + 1
-        
+func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
+    var numbers = [(Int)]()
+    var i = 1
+    let function = "func"
+    for function in numbers[i] {
         
     }
+    
+    }
+    
+    return numbers
+}
+
+func splitlines(lines: String) -> Array<(String)>{
+    var i = 0
+    var linenum = 1
+    var characters = [(String)]()
+    var char = String()
+    var conditional = String()
+    
+    while i < countElements(lines) {
+        var character = lines[advance(lines.startIndex, i)]
+        conditional = " "
+        conditional.append(character)
+        if conditional == " \n" {
+            characters.append((char))
+            linenum = linenum + 1
+            char = " "
+            i = i+1
+        }
+        else {
+            char.append(character)
+            i = i + 1
+            println(char)
+        }
+        
+    }
+    characters.append((char))
+    return characters
 }
 func testifnil(fileContent: String?) -> String {
     if fileContent != nil {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E11f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E17e" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
@@ -646,29 +646,6 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--Tab View Controller-->
-        <scene sceneID="qnK-E9-TKU">
-            <objects>
-                <tabViewController selectedTabViewItemIndex="0" id="wva-Ho-HhD" sceneMemberID="viewController">
-                    <tabViewItems>
-                        <tabViewItem identifier="" id="MoS-Ef-ueh"/>
-                        <tabViewItem identifier="" id="uNW-mv-gx5"/>
-                    </tabViewItems>
-                    <tabView key="tabView" type="noTabsNoBorder" id="mKt-iw-wbu">
-                        <rect key="frame" x="-1" y="0.0" width="451" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
-                        <tabViewItems/>
-                    </tabView>
-                    <connections>
-                        <segue destination="zni-cN-h5g" kind="relationship" relationship="tabItems" id="fnX-a1-pmg"/>
-                        <segue destination="uKs-XI-swk" kind="relationship" relationship="tabItems" id="OUV-yG-wC3"/>
-                    </connections>
-                </tabViewController>
-                <customObject id="UC1-Y9-BPT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="614.5" y="661"/>
         </scene>
         <!--Data Dictionary-->
         <scene sceneID="Qff-5F-93T">
