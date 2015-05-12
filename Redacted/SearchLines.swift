@@ -22,17 +22,27 @@ func Searchlines(string: String) -> Bool{
 
 func splitlines(lines: String) {
     var i = 0
-    var characters = [String]()
+    var linenum = 1
+    var characters = [(Int, String)]()
     let emptyArray = [String]()
     var char = String()
     while i < countElements(lines) {
         var character = lines[advance(lines.startIndex, i)]
+        char = " "
         char.append(character)
-        println(char)
-        println(i)
-        if char == ()
-        characters.append(char)
+        while character != ("\n") {
+            var character = lines[advance(lines.startIndex, i)]
+            char = " "
+            char.append(character)
+            println(character)
+            i = i + 1
+            if character 
+        }
+        characters.append((linenum, char))
+        linenum = linenum + 1
+        println(characters)
         i = i + 1
+        
         
     }
 }
