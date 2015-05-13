@@ -22,13 +22,16 @@ func Searchlines(string: String) -> Bool{
 
 func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
     var numbers = [(Int)]()
-    var i = 1
-    let function = "func"
-    for function in numbers[i] {
+    var i = 0
+    while i < searching.count  {
+        let hello = searching[i]
+        if hello.lowercaseString.rangeOfString("func") != nil {
+            numbers.append(i)
+        }
+        i = i + 1
         
     }
-    
-    }
+    println(numbers)
     
     return numbers
 }
