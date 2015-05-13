@@ -29,12 +29,11 @@ func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
             numbers.append(i)
         }
         i = i + 1
-        
     }
     println(numbers)
-    
     return numbers
 }
+
 
 func splitlines(lines: String) -> Array<(String)>{
     var i = 0
@@ -63,10 +62,21 @@ func splitlines(lines: String) -> Array<(String)>{
     characters.append((char))
     return characters
 }
+
 func testifnil(fileContent: String?) -> String {
     if fileContent != nil {
         let file = fileContent!
         return file
     }
     return ("Is nil")
+}
+
+func getinformation(indexes: Array<(String)>, lines: Array<(String)>) {
+    var i = 0
+    var j = 0
+    while i < countElements(lines) {
+        var character = lines[advance(lines.startIndex, j)]
+        
+    }
+    
 }
