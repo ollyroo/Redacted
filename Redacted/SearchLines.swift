@@ -25,12 +25,11 @@ func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
     var i = 0
     while i < searching.count  {
         let hello = searching[i]
-        if hello.lowercaseString.rangeOfString("func") != nil {
+        if hello.lowercaseString.rangeOfString("func") != nil && hello.lowercaseString.rangeOfString("  ") == nil {
             numbers.append(i)
         }
         i = i + 1
     }
-    println(numbers)
     return numbers
 }
 
@@ -55,7 +54,7 @@ func splitlines(lines: String) -> Array<(String)>{
         else {
             char.append(character)
             i = i + 1
-            println(char)
+          // println(char)
         }
         
     }
@@ -71,12 +70,26 @@ func testifnil(fileContent: String?) -> String {
     return ("Is nil")
 }
 
-func getinformation(indexes: Array<(String)>, lines: Array<(String)>) {
+func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
+    
     var i = 0
     var j = 0
-    while i < countElements(lines) {
-        var character = lines[advance(lines.startIndex, j)]
+    var functions = ""
+    let enter: Character = "\n"
+    while j < countElements(indexes) {
+        var line = lines[indexes[j]]
+        var character = line[advance(line.startIndex, i+5)]
+        if character == "(" {
+            j = j + 1
+            i = 0
+            functions.append(enter)
+        }
+        else {
+            functions.append(character)
+        }
+        i = i + 1
         
     }
-    
+    println(functions)
+    return functions
 }

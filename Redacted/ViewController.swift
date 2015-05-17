@@ -31,12 +31,10 @@ class ViewController: NSViewController {
         if file == "Is nil" {
             IsNil.title = "hello"
         }
-        var exists = Searchlines(file)
-        println(exists)
         let words = splitlines(file)
         println(words)
-        SearchArray(words)
-        
+        let indexes = SearchArray(words)
+        getfunctionnames(indexes, words)
     }
     
 }
