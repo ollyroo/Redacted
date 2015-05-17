@@ -35,6 +35,7 @@ class ViewController: NSViewController {
         println(words)
         let indexes = SearchArray(words)
         getfunctionnames(indexes, words)
+        getvariablenames(indexes, words)
     }
     
 }

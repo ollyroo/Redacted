@@ -93,3 +93,45 @@ func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
     println(functions)
     return functions
 }
+
+func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) {
+    
+    var i = 0
+    var j = 0
+    var variables = ""
+    var inRange = false
+    let enter: Character = "\n"
+    var bracketused = false
+    
+    while j < countElements(indexes) {
+        var line = lines[indexes[j]]
+        var character = line[advance(line.startIndex, i)]
+        if character == ":" {
+            inRange = false
+        }
+        if character == "," {
+            inRange = true
+        }
+        if character == "{" {
+            j = j + 1
+            i = 0
+            inRange = false
+            variables.append(enter)
+            bracketused = false
+        }
+        if inRange == true {
+            variables.append(character)
+            i++
+        }
+        else {
+            i++
+        }
+        if character == "(" && bracketused == false {
+            inRange = true
+            bracketused = true
+        }
+        
+        println(variables)
+    }
+    
+}
