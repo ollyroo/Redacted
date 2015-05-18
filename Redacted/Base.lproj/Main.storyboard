@@ -718,9 +718,7 @@
                     </view>
                     <connections>
                         <outlet property="Filepath" destination="CAe-ia-xNy" id="ELi-eU-oN2"/>
-                        <outlet property="Generate" destination="FiT-84-LQA" id="N84-Il-Fcq"/>
                         <outlet property="IsNil" destination="fC1-BX-1te" id="thv-Bx-huK"/>
-                        <outlet property="button" destination="FiT-84-LQA" id="GX1-yf-9zy"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -21,6 +21,7 @@ func Searchlines(string: String) -> Bool{
 }
 
 func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
+    //Searches array for functions
     var numbers = [(Int)]()
     var i = 0
     while i < searching.count  {
@@ -34,7 +35,8 @@ func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
 }
 
 
-func splitlines(lines: String) -> Array<(String)>{
+func splitlines(lines: String) -> Array<(String)> {
+    //Turns file content into an array for seearching
     var i = 0
     var linenum = 1
     var characters = [(String)]()
@@ -54,7 +56,6 @@ func splitlines(lines: String) -> Array<(String)>{
         else {
             char.append(character)
             i = i + 1
-          // println(char)
         }
         
     }
@@ -63,6 +64,7 @@ func splitlines(lines: String) -> Array<(String)>{
 }
 
 func testifnil(fileContent: String?) -> String {
+    //Tests to see if a string is empty or exists
     if fileContent != nil {
         let file = fileContent!
         return file
@@ -71,11 +73,12 @@ func testifnil(fileContent: String?) -> String {
 }
 
 func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
-    
+    //gets the names of functions from a list of locations
     var i = 0
     var j = 0
     var functions = ""
     let enter: Character = "\n"
+    
     while j < countElements(indexes) {
         var line = lines[indexes[j]]
         var character = line[advance(line.startIndex, i+5)]
@@ -85,17 +88,19 @@ func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
             functions.append(enter)
         }
         else {
-            functions.append(character)
+            if character != " " {
+                functions.append(character)
+            }
+            
         }
         i = i + 1
         
     }
-    println(functions)
     return functions
 }
 
-func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) {
-    
+func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
+    //gets the names of variables used in decleration of a function
     var i = 0
     var j = 0
     var variables = ""
@@ -130,8 +135,6 @@ func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) {
             inRange = true
             bracketused = true
         }
-        
-        println(variables)
     }
-    
+    return variables
 }

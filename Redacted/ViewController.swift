@@ -22,20 +22,22 @@ class ViewController: NSViewController {
         }
     }
     @IBOutlet weak var Filepath: NSTextField!
-    @IBOutlet weak var Generate: NSButton!
     @IBOutlet weak var IsNil: NSButtonCell!
     @IBAction func Click(sender: AnyObject) {
         let filepath = Filepath.stringValue
         let fileContent = NSString(contentsOfFile: filepath, encoding: NSUTF8StringEncoding, error: nil)
-        var file = testifnil(fileContent)
+        let file = testifnil(fileContent)
         if file == "Is nil" {
-            IsNil.title = "hello"
+            IsNil.title = "Please enter valid file path"
+            IsNil.title = "File"
         }
         let words = splitlines(file)
-        println(words)
         let indexes = SearchArray(words)
-        getfunctionnames(indexes, words)
-        getvariablenames(indexes, words)
+        let functionnames = getfunctionnames(indexes, words)
+        let variablenames = getvariablenames(indexes, words)
+        println(functionnames)
+        println(variablenames)
+        
     }
     
 }
