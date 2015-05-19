@@ -43,7 +43,7 @@ func splitlines(lines: String) -> Array<(String)> {
     var char = String()
     var conditional = String()
     
-    while i < countElements(lines) {
+    while i < count(lines) {
         var character = lines[advance(lines.startIndex, i)]
         conditional = " "
         conditional.append(character)
@@ -63,11 +63,11 @@ func splitlines(lines: String) -> Array<(String)> {
     return characters
 }
 
-func testifnil(fileContent: String?) -> String {
+func testifnil(fileContent: NSString?) -> String {
     //Tests to see if a string is empty or exists.
     if fileContent != nil {
         let file = fileContent!
-        return file
+        return file as String
     }
     return ("Is nil")
 }
@@ -79,7 +79,7 @@ func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
     var functions = ""
     let enter: Character = "\n"
     
-    while j < countElements(indexes) {
+    while j < count(indexes) {
         var line = lines[indexes[j]]
         var character = line[advance(line.startIndex, i+5)]
         if character == "(" {
@@ -108,7 +108,7 @@ func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
     let enter: Character = "\n"
     var bracketused = false
     
-    while j < countElements(indexes) {
+    while j < count(indexes) {
         var line = lines[indexes[j]]
         var character = line[advance(line.startIndex, i)]
         if character == ":" {
@@ -151,7 +151,7 @@ func getvariabletypes(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
     var multiple = false
     let space: Character = " "
     
-    while j < countElements(indexes) {
+    while j < count(indexes) {
         var line = lines[indexes[j]]
         var character = line[advance(line.startIndex, i)]
         
@@ -197,7 +197,7 @@ func getvariabledescriptions(indexes: Array<(Int)>, lines: Array<(String)>) -> S
     var inRange = false
     let enter: Character = "\n"
     
-    while j < countElements(indexes) {
+    while j < count(indexes) {
         var line = lines[indexes[j]+1]
         var character = line[advance(line.startIndex, i)]
 
