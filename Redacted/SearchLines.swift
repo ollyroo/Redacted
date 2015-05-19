@@ -9,7 +9,7 @@
 import Foundation
 
 func Searchlines(string: String) -> Bool{
-    // alternative: not case sensitive
+    // alternative: not case sensitive.
     
     if string.lowercaseString.rangeOfString("swift") != nil {
         var exists = true
@@ -21,7 +21,7 @@ func Searchlines(string: String) -> Bool{
 }
 
 func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
-    //Searches array for functions
+    //Searches array for functions.
     var numbers = [(Int)]()
     var i = 0
     while i < searching.count  {
@@ -36,7 +36,7 @@ func SearchArray(searching: Array<(String)>) -> Array<(Int)> {
 
 
 func splitlines(lines: String) -> Array<(String)> {
-    //Turns file content into an array for seearching
+    //Turns file content into an array for seearching.
     var i = 0
     var linenum = 1
     var characters = [(String)]()
@@ -64,7 +64,7 @@ func splitlines(lines: String) -> Array<(String)> {
 }
 
 func testifnil(fileContent: String?) -> String {
-    //Tests to see if a string is empty or exists
+    //Tests to see if a string is empty or exists.
     if fileContent != nil {
         let file = fileContent!
         return file
@@ -73,7 +73,7 @@ func testifnil(fileContent: String?) -> String {
 }
 
 func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
-    //gets the names of functions from a list of locations
+    //gets the names of functions from a list of locations.
     var i = 0
     var j = 0
     var functions = ""
@@ -100,7 +100,7 @@ func getfunctionnames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
 }
 
 func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
-    //gets the names of variables used in decleration of a function
+    //gets the names of variables used in decleration of a function.
     var i = 0
     var j = 0
     var variables = ""
@@ -138,3 +138,97 @@ func getvariablenames(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
     }
     return variables
 }
+
+func getvariabletypes(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
+    //Gets the types of the variables used inthe functions.
+    
+    var i = 0
+    var j = 0
+    var variables = ""
+    var inRange = false
+    let enter: Character = "\n"
+    let bracket: Character = ")"
+    var multiple = false
+    let space: Character = " "
+    
+    while j < countElements(indexes) {
+        var line = lines[indexes[j]]
+        var character = line[advance(line.startIndex, i)]
+        
+        if character == ")" {
+            inRange = false
+            multiple = true
+        }
+        
+        if character == "<" {
+            inRange = false
+            multiple = true
+        }
+        
+        if inRange == true {
+            variables.append(character)
+        }
+        
+        if character == ":" {
+            inRange = true
+            if multiple == true {
+                variables.append(space)
+            }
+            i++
+        }
+    
+        if character == "{" {
+            j = j + 1
+            i = 0
+            inRange = false
+            variables.append(enter)
+            multiple = false
+        }
+        i++
+    }
+    return variables
+}
+
+func getvariabledescriptions(indexes: Array<(Int)>, lines: Array<(String)>) -> String {
+    //gets the comments after function definitions as long as they end with a full stop.
+    var i = 0
+    var j = 0
+    var descriptions = ""
+    var inRange = false
+    let enter: Character = "\n"
+    
+    while j < countElements(indexes) {
+        var line = lines[indexes[j]+1]
+        var character = line[advance(line.startIndex, i)]
+
+        
+        if inRange == true {
+            descriptions.append(character)
+        }
+        if character == "/" {
+            inRange = true
+            i = i + 1
+        }
+        i++
+        
+        if character == "." {
+            j++
+            i = 0
+            inRange = false
+            descriptions.append(enter)
+        }
+        
+    }
+    return descriptions
+}
+
+
+
+
+
+
+
+
+
+
+
